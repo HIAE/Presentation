@@ -22,7 +22,7 @@ open class PresentationController: PagesController {
   private var animationTimer: Timer?
 
   init(pages: [UIViewController]) {
-    self.init(
+    super.init(
       transitionStyle: .scroll,
       navigationOrientation: .horizontal,
       options: nil
@@ -30,6 +30,10 @@ open class PresentationController: PagesController {
 
     add(pages)
   }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
   // MARK: - View lifecycle
 
