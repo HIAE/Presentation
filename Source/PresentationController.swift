@@ -21,7 +21,7 @@ open class PresentationController: PagesController {
   private weak var scrollView: UIScrollView?
   private var animationTimer: Timer?
 
-  public convenience init(pages: [UIViewController]) {
+  init(pages: [UIViewController]) {
     self.init(
       transitionStyle: .scroll,
       navigationOrientation: .horizontal,
