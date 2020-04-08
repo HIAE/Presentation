@@ -21,14 +21,18 @@ open class PresentationController: PagesController {
   private weak var scrollView: UIScrollView?
   private var animationTimer: Timer?
 
-  public convenience init(pages: [UIViewController]) {
-    self.init(
+  public init(pages: [UIViewController]) {
+    super.init(
       transitionStyle: .scroll,
       navigationOrientation: .horizontal,
       options: nil
     )
 
     add(pages)
+  }
+    
+  required public init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
   }
 
   // MARK: - View lifecycle
